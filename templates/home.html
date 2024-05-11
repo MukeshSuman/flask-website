@@ -5,15 +5,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 16px
+      }
+    </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="/static/banner.jpg" alt="banner"/>
     <div class="container">
     <h1 class="text-center my-2">{{company_name}} Careers</h1>
-    <img class="img-fluid" id="banner" src="/static/banner.jpg" alt="banner" height="320" />
-    <h2 class="text-center my-2">About Mithila IT</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
     <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit duis tristique sollicitudin nibh sit amet. Diam in arcu cursus euismod quis viverra nibh cras. Commodo viverra maecenas accumsan lacus vel facilisis. Vitae semper quis lectus nulla at volutpat. Viverra suspendisse potenti nullam ac. A erat nam at lectus urna. Suspendisse sed nisi lacus sed viverra. Accumsan sit amet nulla facilisi morbi tempus iaculis urna. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Id porta nibh venenatis cras sed felis eget velit. Et malesuada fames ac turpis.
     </p>
+          </div>
+        <div class="d-none d-mb-block col-md-6">
+        <img src="/static/people.jpg" style="height:320px; border-radius:4px;"/>
+        </div>
+      </div>
     <h2 class="text-center my-2">Open Positions</h2>
     <p>
       {% for job in jobs %}
@@ -22,8 +37,8 @@
     </p>
       <div class="text-center my-2">
     <button type="button" class="btn btn-primary">Contact US</button>
-        <p class="mt-4">Copyrigth 2024, Mithila IT</p>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
